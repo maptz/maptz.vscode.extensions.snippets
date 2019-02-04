@@ -1,9 +1,9 @@
 {
     "name": "maptz-vscode-extensions-snippets",
     "displayName": "Maptz.VSCode.Extensions.Snippets",
-    "description": "My vscode snippets",
+    "description": "Maptz Visual Studio Code snippets",
     "repository": "https://github.com/maptz/maptz.vscode.extensions.snippets",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "maptz",
     "engines": {
         "vscode": "^1.30.0"

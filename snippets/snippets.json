@@ -38,7 +38,7 @@
 		"description": "An INotifyPropertyChanged property."
 	},
 	"INotifyPropertyBody": {
-		"prefix": "inc",
+		"prefix": "inpmethods",
 		"body": [
 			"public event PropertyChangedEventHandler PropertyChanged;",
 			"protected virtual void OnPropertyChanged<T>(string SomeProperty, T oldValue, T newValue)",
@@ -58,7 +58,7 @@
 		"description": "A standard INotifyPropertyChanged implementation."
 	},
 	"INotifyPropertyClass": {
-		"prefix": "inpc",
+		"prefix": "inpclass",
 		"body": [
 			"public class ${1:ClassName} : INotifyPropertyChanged",
 			"{",

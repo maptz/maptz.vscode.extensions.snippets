@@ -8,8 +8,8 @@ The extension currently features the following snippets:
 
 - `prop` - An property with explicit backing fields. 
 - `inp` - An property with explicit backing fields and a call to the `OnPropertyChanged` method. 
-- `inc` - A default body for `INotifyPropertyChanged` classes.
-- `inpc` - A simple `INotifyPropertyChanged` class with a default body.
+- `inmethods` - A default body for `INotifyPropertyChanged` classes.
+- `inpclass` - A simple `INotifyPropertyChanged` class with a default body.
 - `opts` - A simple class consuming `IOptions` for use with .net core `Microsoft.Extensions.Options`.
 
 ## Requirements
@@ -21,6 +21,10 @@ None
 None
 
 ## Release Notes
+
+### 0.0.3
+
+Updated package commands to match the Maptz full Visual Studio extension.
 
 ### 0.0.2
 
