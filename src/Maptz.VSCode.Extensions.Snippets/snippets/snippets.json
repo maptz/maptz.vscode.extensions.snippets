@@ -1,0 +1,106 @@
+{
+	"ExpandedProperty": {
+		"prefix": "prop",
+		"body": [
+			"private ${1:string} _${1:someProperty};",
+			"public ${1:string} ${2:SomeProperty}",
+			"{",
+			"   get => this._${1:someProperty}",
+			"   set",
+			"   {",
+			"      if (this._${1:someProperty} != value)",
+			"      {",
+			"         this_${1:someProperty} = value;",
+			"      }",
+			"   }",
+			"}"
+		],
+		"description": "An expanded property."
+	},
+	"INotifyProperty": {
+		"prefix": "inp",
+		"body": [
+			"private ${1:string} _${1:someProperty};",
+			"public ${1:string} ${2:SomeProperty}",
+			"{",
+			"   get => this._${1:someProperty}",
+			"   set",
+			"   {",
+			"      if (this._${1:someProperty} != value)",
+			"      {",
+			"         var oldValue = this_${1:someProperty};",
+			"         this_${1:someProperty} = value;",
+			"         this.OnPropertyChanged(nameof(${2:SomeProperty}), value, oldValue);",
+			"      }",
+			"   }",
+			"}"
+		],
+		"description": "An INotifyPropertyChanged property."
+	},
+	"INotifyPropertyBody": {
+		"prefix": "inc",
+		"body": [
+			"public event PropertyChangedEventHandler PropertyChanged;",
+			"protected virtual void OnPropertyChanged<T>(string SomeProperty, T oldValue, T newValue)",
+			"{",
+			"   this.RaisePropertyChanged(SomeProperty);",
+			"}",
+			"",
+			"private void RaisePropertyChanged(string SomeProperty)",
+			"{",
+			"   var propertyChanged = this.PropertyChanged;",
+			"   if (propertyChanged != null)",
+			"   {",
+			"      propertyChanged(SomeProperty, new PropertyChangedEventArgs(SomeProperty));",
+			"   }",
+			"}"
+		],
+		"description": "A standard INotifyPropertyChanged implementation."
+	},
+	"INotifyPropertyClass": {
+		"prefix": "inpc",
+		"body": [
+			"public class ${1:ClassName} : INotifyPropertyChanged",
+			"{",
+			"   public ${1:ClassName}",
+			"   {",
+			"   }",
+			"   public event PropertyChangedEventHandler PropertyChanged;",
+			"   protected virtual void OnPropertyChanged<T>(string SomeProperty, T oldValue, T newValue)",
+			"   {",
+			"      this.RaisePropertyChanged(SomeProperty);",
+			"   }",
+			"   ",
+			"   private void RaisePropertyChanged(string SomeProperty)",
+			"   {",
+			"      var propertyChanged = this.PropertyChanged;",
+			"      if (propertyChanged != null)",
+			"      {",
+			"         propertyChanged(SomeProperty, new PropertyChangedEventArgs(SomeProperty));",
+			"      }",
+			"   }",
+			"}"
+		],
+		"description": "A class with a standard INotifyPropertyChanged implementation."
+	},
+	"OptionsClass": {
+		"prefix": "opts",
+		"body": [
+			"public class ${1:ClassName}",
+			"{",
+			"   private ${1:ClassName}Settings Settings { get; }",
+			"",
+			"   public ${1:ClassName}(IOptions<${1:ClassName}Settings> settings)",
+			"   {",
+			"      this.Settings = settings.Value;",
+			"   }",
+			"}",
+			"",
+			"public class ${1:ClassName}Settings",
+			"{",
+			"",
+			"}"
+		],
+		"description": "An .net core options class."
+	}
+}

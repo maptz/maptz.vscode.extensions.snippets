@@ -1,0 +1,22 @@
+{
+    "name": "maptz-vscode-extensions-snippets",
+    "displayName": "Maptz.VSCode.Extensions.Snippets",
+    "description": "My vscode snippets",
+    "repository": "https://github.com/maptz/maptz.vscode.extensions.snippets",
+    "version": "0.0.2",
+    "publisher": "maptz",
+    "engines": {
+        "vscode": "^1.30.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "csharp",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}
